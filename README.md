@@ -72,7 +72,7 @@ In most case it is enough to use level = 0 (85%), level = 2 only requires in a c
 
 Output files can be downloaded from <a href="zenodo.com">Zenodo</a> and example output fiels are <a href="https://github.com/vtman/perlotSeeds/tree/main/ExampleBinaryBlocks">ExampleBinaryBlocks</a>.
 
-Output files are in binary format. For a given block size <b>B<b> we find the smallest number <b>N</b> such that <b>B &#8804;8N</b>. So, for block of length 30, we need 4 bytes to store. A hundred blocks requires 100*4= 400 bytes.
+Output files are in binary format. For a given block size <b>B</b> we find the smallest number <b>N</b> such that <b>B &#8804;8N</b>. So, for block of length 30, we need 4 bytes to store. A hundred blocks requires 100*4= 400 bytes.
 
 <h2 id="link_ternaryBlock">periodicTernaryBlocks: ternary blocks of maximum weight</h2>
 
