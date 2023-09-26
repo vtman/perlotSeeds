@@ -58,7 +58,7 @@ In PerFSeeB project we have gnerated periodic binary blocks of maximum weight fo
 <h3>Parameters</h3>
 
 <ol>
-  <li>Input folder (binary blocks obtained in PerFSeeB project)</li>
+  <li>Input folder (binary blocks obtained in PerFSeeB project, can be found in <a href="https://github.com/vtman/perlotSeeds/tree/main/binaryBlocksText">binaryBlocksText</a>)</li>
   <li>Output folder</li>
   <li>Number of mismatches (from 2 to 9)</li>
   <li>Size of blocks (from 3 to 50)</li>
@@ -69,6 +69,8 @@ In PerFSeeB project we have gnerated periodic binary blocks of maximum weight fo
 <tt>periodicBinaryBlockLevel.exe E:\Temp2\perlotSeeds\binaryBlocksText E:\Temp2\perlotSeeds\binaryBlocks 4 24 0 2</tt>
 
 In most case it is enough to use level = 0 (85%), level = 2 only requires in a couple cases, the rest is for level = 1.
+
+Output files can be downloaded from <a href="zenodo.com">Zenodo</a>.
 
 For the output, we get the matrix and information about the seed's validity. If the seed is not valid we also get a list of columns when the requirements are not met. For example, we get columns 4, 8, 10 and the matrix (extra separator | is added for convenience).
 
