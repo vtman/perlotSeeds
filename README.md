@@ -27,15 +27,13 @@ We see that if we know the poistion of the first sequence <tt>TTGGAGATCG</tt> (f
 
 Reads often SNPs, so it is cruicial to deal with possible mismatches. One of the approaches is to use <i>seeds</i>, i.e. a sequence of 0 and 1 elements. Let there be two seqeunce of symbols and a seed of the same length. When an element of the seed is 1, then we compare corresponding elements of two symbol sequences, otherwise we ignore possible deviations. 
 
-If we use seed <tt>1010101010</tt>, then we only need to compare symbols at odd positions, five in total.
-
+If we use seed <tt>1010101010</tt>, then we only need to compare symbols at odd positions, five in total. Three symbols match in the sequences. 
 <table>
   <tr><th>Sequence 1</th><th><tt>TTGGAGATCG</tt></th></tr>
   <tr><th>Sequence 2</th><th><tt>TAGGTGCTCG</tt></th></tr>
   <tr><th>Seed</th>      <th><tt>1010101010</tt></th></tr>
   <tr><th>Match</th>     <th><tt>1_1_0_0_1_</tt></th></tr>
 </table>
-Three symbols match in the sequences. 
 
 If we use seed <tt>1010010101</tt> (length is 10, weight is 5, weight is the number of 1-elements), then we have all five symbols match.
 <table>
@@ -44,7 +42,11 @@ If we use seed <tt>1010010101</tt> (length is 10, weight is 5, weight is the num
   <tr><th>Seed</th>      <th><tt>1010010101</tt></th></tr>
   <tr><th>Match</th>     <th><tt>1_1__1_1_1</tt></th></tr>
 </table>
+So, if we form a library of record based on <tt>1010010101</tt>, then one record is (16, <tt>TGGTG</tt>) and a read contining the second sequence <tt>TAGGTGCTCG</tt> can be pre-aligned with respect to <tt>ACGACAACCTTGTCGTTGGAGATCGGAAGAGCACACGTCTGAAC</tt>.
 
+Ideally, we should find seeds of large weight, since by increasing the weight by one we reducing the number of candidate positions to be chekced in 4 times (aassuming that the chance to have any of the symbols <tt>A</tt>, <tt>C</tt>, <tt>G</tt> and <tt>T</tt> is the same). Codes to generate such seed can be found in <a href="https://github.com/vtman/PerFSeeB">https://github.com/vtman/PerFSeeB</a>.
+
+Standard seeds are <i>binary</i> when there are only two states (<b><tt>1</tt></b> or <b><tt>#</tt></b> for <i>match</i> and <b><tt>0</tt></b> or <b><tt>&#95;</tt></b> for ``don't care symbol''). In genetics, the chance to have a <b>transition</b> mutation (<tt>A</tt> &harr; <tt>G</tt> or <tt>C</tt> &harr; <tt>T</tt>) is often twice higher than a <b>transversion</b> mutation (<tt>A</tt> &harr; <tt>C</tt>, <tt>A</tt> &harr; <tt>T</tt>, <tt>G</tt> &harr; <tt>C</tt>, <tt>G</tt> &harr; <tt>T</tt>). Transition-constrained seeds use ternary alphabet {<b><tt>#</tt></b>, <b><tt>@</tt></b>, <b><tt>&#95;</tt></b>} where <b><tt>@</tt></b> is for a match or a transition mismatch.
 
 We may use a contiguous seed of length 10, i.e. <tt>1111111111</tt>. In this case all symbols are taken into account and we may say that the symbol seqeunces are not the same (7 symbols match, out of 10). 
 
