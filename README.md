@@ -93,6 +93,8 @@ Output files are in binary format. For a given block size <b>B</b> we find the s
 
 Output files for ternary blocks are also in binary format. Each element of a block requires 2 bits (<tt>&#95;</tt> = <tt>0</tt> = <tt>00</tt>, <tt>#</tt> = <tt>1</tt> = <tt>01</tt>, <tt>@</tt> = <tt>2</tt> = <tt>10</tt>). So, a block of length 30 requires 8 bytes.
 
+Output files can be downloaded from <a href="zenodo.com">Zenodo</a> and example output files are <a href="https://github.com/vtman/perlotSeeds/tree/main/ExampleTernaryBlocks">ExampleTernaryBlocks</a>. Some files are huge (tens of gygabytes). 
+
 <h2 id="link_bin2text">convertBin2Text: convert ternary blocks in binary format into a text</h2>
 
 <h3>Parameters</h3>
@@ -103,7 +105,6 @@ Output files for ternary blocks are also in binary format. Each element of a blo
   <li>Block size</li>
   <li>Number of mismatches (transition)</li>
   <li>Number of mismatches (transversion)</li>
-<li>Level</li>
 </ol>
 
 <tt>convertBin2Text.exe E:\Temp2\perlotSeeds\ternaryBlocks E:\Temp2\perlotSeeds\ternaryBlocksText 30 2 3</tt>
