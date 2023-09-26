@@ -13,9 +13,9 @@ Periodic lossless ternary seeds of maximum weight
 <h2 id="link_intro">Introduction</h2>
 We consider sequences of symbols <tt>A</tt>, <tt>C</tt>, <tt>G</tt> and <tt>T</tt>. In practical applications we have a long <i>reference</i> sequence (upto billions of symbols) and a short sequence (<i>read</i>, often 50-300 symbols) obtained experiemntally. The read is a small chunk of an unknown sequeunce, which is in some sense similar to the reference sequence. Therefore we expect these two long sequences to have similar subsequnces. There will be also some deviations, like SNPs (single-nucleotide polymorphisms) when some symbols are replaced by other symbols or insertions/deliations when some symbols are added or removed. 
 
-The simplest approach to form the unknown long sequence is to pre-align its chunks (reads) with respect to the known refernce sequence, then perform full scale comparision to take into account possible SNPs and insersions/deletions. As reads may often contain SNPs we need to use <i>seeds</i>, i.e. a sequence of 0 and 1 elements. Let there be two seqeunce of symbols and a seed of the same length. When an element of the seed is 1, then we compare corresponding elements of two symbol sequences, otherwise we ignore possible deviations. 
+The simplest approach to form the unknown long sequence is to pre-align its chunks (reads) with respect to the known refernce sequence, then perform full scale comparision to take into account possible SNPs and insersions/deletions. For the pre-aligning step we usually create a library of pairs (position within the reference sequence, the sequence of symbols) and sort all records by "sequence of symbols" value. So, if a read contains one of the subseqeunces from the library's records, then we can find the corresponding positions within the reference sequnce and thus pre-align the read. Of course, this approach only works if all elements of the chunks are the same.
 
-For example, we have two sequnences <tt>TTGGAGATCG</tt> and <tt>TAGGTGCTCG</tt>. We compare the corresponding elements of the sequences and get 1 if there is a match and 0 if there is a mismatch.
+For example, we have two sequences <tt>TTGGAGATCG</tt> and <tt>TAGGTGCTCG</tt> (of length 10). We compare the corresponding elements of the sequences and get 1 if there is a match and 0 if there is a mismatch.
 
 <table>
   <tr><th>Sequence 1</th><th><tt>TTGGAGATCG</tt></th></tr>
@@ -23,6 +23,30 @@ For example, we have two sequnences <tt>TTGGAGATCG</tt> and <tt>TAGGTGCTCG</tt>.
   <tr><th>Match</th><th><tt>1011010111</tt></th></tr>
 </table>
 
+We see that if we know the poistion of the first sequence <tt>TTGGAGATCG</tt> (for example, position 16 with respect to the reference <tt>ACGACAACCTTGTCGTTGGAGATCGGAAGAGCACACGTCTGAAC</tt>), then we may pre-align another string containing <tt>TTGGAGATCG</tt>. However, it is not possible to pre-align a string containing <tt>TAGGTGCTCG</tt>, since the library of records does not contain this chunk.
+
+Reads often SNPs, so it is cruicial to deal with possible mismatches. One of the approaches is to use <i>seeds</i>, i.e. a sequence of 0 and 1 elements. Let there be two seqeunce of symbols and a seed of the same length. When an element of the seed is 1, then we compare corresponding elements of two symbol sequences, otherwise we ignore possible deviations. 
+
+If we use seed <tt>1010101010</tt>, then we only need to compare symbols at odd positions, five in total.
+
+<table>
+  <tr><th>Sequence 1</th><th><tt>TTGGAGATCG</tt></th></tr>
+  <tr><th>Sequence 2</th><th><tt>TAGGTGCTCG</tt></th></tr>
+  <tr><th>Seed</th>      <th><tt>1010101010</tt></th></tr>
+  <tr><th>Match</th>     <th><tt>1_1_0_0_1_</tt></th></tr>
+</table>
+Three symbols match in the sequences. 
+
+If we use seed <tt>1010010101</tt> (length is 10, weight is 5, weight is the number of 1-elements), then we have all five symbols match.
+<table>
+  <tr><th>Sequence 1</th><th><tt>TTGGAGATCG</tt></th></tr>
+  <tr><th>Sequence 2</th><th><tt>TAGGTGCTCG</tt></th></tr>
+  <tr><th>Seed</th>      <th><tt>1010010101</tt></th></tr>
+  <tr><th>Match</th>     <th><tt>1_1__1_1_1</tt></th></tr>
+</table>
+
+
+We may use a contiguous seed of length 10, i.e. <tt>1111111111</tt>. In this case all symbols are taken into account and we may say that the symbol seqeunces are not the same (7 symbols match, out of 10). 
 
 and seed 
 
