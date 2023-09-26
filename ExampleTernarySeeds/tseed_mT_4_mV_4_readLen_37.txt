@@ -1,0 +1,197 @@
+Read length: 37
+Mismatches (transition): 4
+Mismatches (transversion): 4
+Seed weight: 7
+
+Block size: 15
+Number of whole blocks: 1
+Remainder: 8
+@#__@_@#_______
+Number of # in the block: 2
+Number of @ in the block: 3
+@#__@_@#_______@#__@_@#
+
+Block size: 15
+Number of whole blocks: 1
+Remainder: 8
+#@__@_#@_______
+Number of # in the block: 2
+Number of @ in the block: 3
+#@__@_#@_______#@__@_#@
+
+Block size: 15
+Number of whole blocks: 1
+Remainder: 8
+@#__@_#@_______
+Number of # in the block: 2
+Number of @ in the block: 3
+@#__@_#@_______@#__@_#@
+
+Block size: 15
+Number of whole blocks: 1
+Remainder: 8
+@@__#_@#_______
+Number of # in the block: 2
+Number of @ in the block: 3
+@@__#_@#_______@@__#_@#
+
+Block size: 15
+Number of whole blocks: 1
+Remainder: 8
+@#__#_@@_______
+Number of # in the block: 2
+Number of @ in the block: 3
+@#__#_@@_______@#__#_@@
+
+Block size: 15
+Number of whole blocks: 1
+Remainder: 8
+#__@@#_@_______
+Number of # in the block: 2
+Number of @ in the block: 3
+#__@@#_@_______#__@@#_@
+
+Block size: 15
+Number of whole blocks: 1
+Remainder: 8
+@__@#@_#_______
+Number of # in the block: 2
+Number of @ in the block: 3
+@__@#@_#_______@__@#@_#
+
+Block size: 15
+Number of whole blocks: 1
+Remainder: 8
+#__#@@_@_______
+Number of # in the block: 2
+Number of @ in the block: 3
+#__#@@_@_______#__#@@_@
+
+Block size: 15
+Number of whole blocks: 1
+Remainder: 8
+#__@_@#@_______
+Number of # in the block: 2
+Number of @ in the block: 3
+#__@_@#@_______#__@_@#@
+
+Block size: 15
+Number of whole blocks: 1
+Remainder: 8
+#__@_#@@_______
+Number of # in the block: 2
+Number of @ in the block: 3
+#__@_#@@_______#__@_#@@
+
+Block size: 15
+Number of whole blocks: 1
+Remainder: 8
+@__#_@#@_______
+Number of # in the block: 2
+Number of @ in the block: 3
+@__#_@#@_______@__#_@#@
+
+Block size: 15
+Number of whole blocks: 1
+Remainder: 8
+#__#_@@@_______
+Number of # in the block: 2
+Number of @ in the block: 3
+#__#_@@@_______#__#_@@@
+
+Block size: 17
+Number of whole blocks: 1
+Remainder: 4
+#@@#_____@___@___
+Number of # in the block: 2
+Number of @ in the block: 4
+#@@#_____@___@___#@@#
+
+Block size: 17
+Number of whole blocks: 1
+Remainder: 4
+@#@#_____@___@___
+Number of # in the block: 2
+Number of @ in the block: 4
+@#@#_____@___@___@#@#
+
+Block size: 17
+Number of whole blocks: 1
+Remainder: 4
+#@#@_____@___@___
+Number of # in the block: 2
+Number of @ in the block: 4
+#@#@_____@___@___#@#@
+
+Block size: 17
+Number of whole blocks: 1
+Remainder: 4
+@@##_____@___@___
+Number of # in the block: 2
+Number of @ in the block: 4
+@@##_____@___@___@@##
+
+Block size: 17
+Number of whole blocks: 1
+Remainder: 4
+@##@_____@___@___
+Number of # in the block: 2
+Number of @ in the block: 4
+@##@_____@___@___@##@
+
+Block size: 17
+Number of whole blocks: 1
+Remainder: 4
+##@@_____@___@___
+Number of # in the block: 2
+Number of @ in the block: 4
+##@@_____@___@___##@@
+
+Block size: 17
+Number of whole blocks: 1
+Remainder: 4
+#@@#__@______@___
+Number of # in the block: 2
+Number of @ in the block: 4
+#@@#__@______@___#@@#
+
+Block size: 17
+Number of whole blocks: 1
+Remainder: 4
+@#@#__@______@___
+Number of # in the block: 2
+Number of @ in the block: 4
+@#@#__@______@___@#@#
+
+Block size: 17
+Number of whole blocks: 1
+Remainder: 4
+#@#@__@______@___
+Number of # in the block: 2
+Number of @ in the block: 4
+#@#@__@______@___#@#@
+
+Block size: 17
+Number of whole blocks: 1
+Remainder: 4
+@@##__@______@___
+Number of # in the block: 2
+Number of @ in the block: 4
+@@##__@______@___@@##
+
+Block size: 17
+Number of whole blocks: 1
+Remainder: 4
+@##@__@______@___
+Number of # in the block: 2
+Number of @ in the block: 4
+@##@__@______@___@##@
+
+Block size: 17
+Number of whole blocks: 1
+Remainder: 4
+##@@__@______@___
+Number of # in the block: 2
+Number of @ in the block: 4
+##@@__@______@___##@@
+
