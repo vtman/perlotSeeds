@@ -91,7 +91,7 @@ Output files are in binary format. For a given block size <b>B</b> we find the s
 
 <tt>periodicTernaryBlocks.exe E:\Temp2\perlotSeeds\binaryBlocks E:\Temp2\perlotSeeds\ternaryBlocks 30 2 3 0</tt>
 
-Output files for ternary blocks are also in binary format. Each element of a block requires 2 bits (<tt>_</tt> = <tt>0<tt> = <tt>00<tt>, <tt>#</tt> = = <tt>1<tt> = <tt>01<tt>, <tt>@</tt> = = <tt>2<tt> = <tt>10<tt>). So, a block of length 30 requires 8 bytes.
+Output files for ternary blocks are also in binary format. Each element of a block requires 2 bits (<tt>&#95;</tt> = <tt>0</tt> = <tt>00</tt>, <tt>#</tt> = <tt>1</tt> = <tt>01</tt>, <tt>@</tt> = <tt>2</tt> = <tt>10</tt>). So, a block of length 30 requires 8 bytes.
 
 <h2 id="link_bin2text">convertBin2Text: convert ternary blocks in binary format into a text</h2>
 
