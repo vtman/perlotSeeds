@@ -11,7 +11,23 @@ Periodic lossless ternary seeds of maximum weight
   </nav>
 
 <h2 id="link_intro">Introduction</h2>
-We consider sequences of symbols <tt>A</tt>, <tt>C</tt>, <tt>G</tt> and <tt>T</tt>. Suppose there is a long reference sequence (for a human genome it may have a length of 3.2 billion symbols). There is also a set of short sequences (called <i>reads</i>), their size is around 50-300 symbols. We know that the reads are chunks of another long sequence which is in some way is close to the reference sequence. Our goal is to align those reads with respect to the reference sequence. 
+We consider sequences of symbols <tt>A</tt>, <tt>C</tt>, <tt>G</tt> and <tt>T</tt>. In practical applications we have a long <i>reference</i> sequence (upto billions of symbols) and a short sequence (<i>read</i>, often 50-300 symbols) obtained experiemntally. The read is a small chunk of an unknown sequeunce, which is in some sense similar to the reference sequence. Therefore we expect these two long sequences to have similar subsequnces. There will be also some deviations, like SNPs (single-nucleotide polymorphisms) when some symbols are replaced by other symbols or insertions/deliations when some symbols are added or removed. 
+
+The simplest approach to form the unknown long sequence is to pre-align its chunks (reads) with respect to the known refernce sequence, then perform full scale comparision to take into account possible SNPs and insersions/deletions. As reads may often contain SNPs we need to use <i>seeds</i>, i.e. a sequence of 0 and 1 elements. Let there be two seqeunce of symbols and a seed of the same length. When an element of the seed is 1, then we compare corresponding elements of two symbol sequences, otherwise we ignore possible deviations. 
+
+For example, we have two sequnences <tt>TTGGAGATCG</tt> and <tt>TAGGTGCTCG</tt>. We compare the corresponding elements of the sequences and get 1 if there is a match and 0 if there is a mismatch.
+
+<table>
+  <tr><th>Sequence 1</th><th><tt>TTGGAGATCG</tt></th></tr>
+  <tr><th>Sequence 2</th><th><tt>TAGGTGCTCG</tt></th></tr>
+  <tr><th>Match</th><th><tt>1011010111</tt></th></tr>
+</table>
+
+
+and seed 
+
+<tt>1011010111</tt>. 
+Let there be two sequences and weSuppose there is a long reference sequence (for a human genome it may have a length of 3.2 billion symbols). There is also a set of short sequences (called <i>reads</i>), their size is around 50-300 symbols. We know that the reads are chunks of another long sequence which is in some way is close to the reference sequence. Our goal is to align those reads with respect to the reference sequence. 
 
 Suppose, we have a reference sequence
 <tt>ACGACAACCTTGTCGTTGGAGATCGGAAGAGCACACGTCTGAAC</tt>
