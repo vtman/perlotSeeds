@@ -70,40 +70,24 @@ In PerFSeeB project we have gnerated periodic binary blocks of maximum weight fo
 
 In most case it is enough to use level = 0 (85%), level = 2 only requires in a couple cases, the rest is for level = 1.
 
-Output files can be downloaded from <a href="zenodo.com">Zenodo</a>.
+Output files can be downloaded from <a href="zenodo.com">Zenodo</a> and example output fiels are <a href="https://github.com/vtman/perlotSeeds/tree/main/ExampleBinaryBlocks">ExampleBinaryBlocks</a>.
 
-For the output, we get the matrix and information about the seed's validity. If the seed is not valid we also get a list of columns when the requirements are not met. For example, we get columns 4, 8, 10 and the matrix (extra separator | is added for convenience).
+Output files are in binary format. For a given block size <b>B<b> we find the smallest number <b>N</b> such that <b>B &#8804;8N</b>. So, for block of length 30, we need 4 bytes to store. A hundred blocks requires 100*4= 400 bytes.
 
-<table>
-  <tr><th><tt>101|1000|10|000000</tt></th></tr>
-  <tr><th><tt>010|1100|01|000000</tt></th></tr>
-  <tr><th><tt>001|0110|00|100000</tt></th></tr>
-  <tr><th><tt>000|1011|00|010000</tt></th></tr>  
-  <tr><th><tt>000|0101|10|001000</tt></th></tr>
-  <tr><th><tt>000|0010|11|000100</tt></th></tr>
-  <tr><th><tt>000|0001|01|100010</tt></th></tr>
-  <tr><th><tt>000|0000|10|110001</tt></th></tr>
-  <tr><th><tt>___|X___|X_|X_____</tt></th></tr>
-</table>
+<h2 id="link_ternaryBlock">periodicTernaryBlocks: ternary blocks of maximum weight</h2>
 
-
-checkSeed128 is a faster version based on SIMD instructions. checkSeedClassic and checkSeed128 have the same input parameters.
-
-<h2 id="link_iterSeed">iterSeed: Spaced seeds generated iteratively</h2>
-
-We have a tool to check if a seed is valid. Of course, for a given length of a seed we may generate all possible spaced seeds. For length 1, there is only one seed <tt>1</tt>, for length 2, there is also one seed <tt>11</tt>, for length 3, there are 2 seeds (<tt>101</tt>, <tt>111</tt>), for length 4, there are 4 seeds (<tt>1001</tt>, <tt>1011</tt>, <tt>1101</tt>, <tt>1111</tt>), etc. So, for length k, there are 2<sup>k-2</sup> seeds of length k, therefore there are 2<sup>k-1</sup> seeds of length not more than k. We need to reduce the number of possible seeds to be validated. 
-
-If there is a valid seed, then all its subseeds are also valid. For example, seed <tt>111001011</tt> is valid for r=15, m=2. Subseeds like <tt>111</tt>, <tt>1011</tt>, <tt>111001</tt>, <tt>1001001</tt> are also valid. Therefore for a step k we may consider all valid spaced seeds of length less than k and pad them with all 0-elements and one end 1-element from the right. So, to find seed <tt>1101001101</tt> (it is also a valid seed for the abovbe parameters) we use seed <tt>11010011</tt> pad it with one <tt>0</tt> and one <tt>1</tt>. We may also perform an additional check: by removing the leftest 1-element of the new seed (and all neighbouring 0-elements) we should get a valid seed. Therefore we need to check if 
-<tt>101001101</tt> is in the list of valid seeds generated before. There is no need to check other subseeds of <tt>1101001101</tt>, since either <tt>11010011</tt> or <tt>101001101</tt> contain them.
 
 <h3>Parameters</h3>
 
 <ol>
-  <li>Output folder</li>
-  <li>Number of mismatches</li>
-  <li>Length of reads</li>
-	<li>Minimum weight</li>
+  <li>Input folder (files for binary blocks, like in <a href="https://github.com/vtman/perlotSeeds/tree/main/ExampleBinaryBlocks">ExampleBinaryBlocks</a>)</li>
+  <li>Outout folder</li>
+  <li>Block size</li>
+  <li>Number of mismatches (transition)</li>
+  <li>Number of mismatches (transversion)</li>
+<li>Level</li>
 </ol>
+
 
 Since there are usually a lot of spaced seeds generated in this way, we try to report only seeds of large weights. Therefore we specify the minimum weight required for a seed to be reported.
 
