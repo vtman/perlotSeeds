@@ -6,6 +6,7 @@ Periodic lossless ternary seeds of maximum weight
     <li><a href="#link_intro">Introduction</a></li>
     <li><a href="#link_binaryLevel">periodicBinaryBlockLevel: binary blocks of less than maximum weight</a></li>
     <li><a href="#link_ternaryBlock">periodicTernaryBlocks: ternary blocks of maximum weight</a></li>	  
+ <li><a href="#link_bin2text">convertBin2Text: convert ternary blocks in binary format into a text</a></li>
     <li><a href="#link_maxWeight">ternarySeedMaxWeight: ternary seeds of maximum weight</a></li>
   </ul>
   </nav>
@@ -81,14 +82,31 @@ Output files are in binary format. For a given block size <b>B</b> we find the s
 
 <ol>
   <li>Input folder (files for binary blocks, like in <a href="https://github.com/vtman/perlotSeeds/tree/main/ExampleBinaryBlocks">ExampleBinaryBlocks</a>)</li>
-  <li>Outout folder</li>
+  <li>Output folder</li>
   <li>Block size</li>
   <li>Number of mismatches (transition)</li>
   <li>Number of mismatches (transversion)</li>
 <li>Level</li>
 </ol>
 
-<tt>iterSeed.exe C:\MyFolder 15 2 6</tt>
+<tt>periodicTernaryBlocks.exe E:\Temp2\perlotSeeds\binaryBlocks E:\Temp2\perlotSeeds\ternaryBlocks 30 2 3 0</tt>
+
+Output files for ternary blocks are also in binary format. Each element of a block requires 2 bits (<tt>_</tt> = <tt>0<tt> = <tt>00<tt>, <tt>#</tt> = = <tt>1<tt> = <tt>01<tt>, <tt>@</tt> = = <tt>2<tt> = <tt>10<tt>). So, a block of length 30 requires 8 bytes.
+
+<h2 id="link_bin2text">convertBin2Text: convert ternary blocks in binary format into a text</h2>
+
+<h3>Parameters</h3>
+
+<ol>
+  <li>Input folder (ternary blocks in binary format)</li>
+  <li>Output folder</li>
+  <li>Block size</li>
+  <li>Number of mismatches (transition)</li>
+  <li>Number of mismatches (transversion)</li>
+<li>Level</li>
+</ol>
+
+<tt>convertBin2Text.exe E:\Temp2\perlotSeeds\ternaryBlocks E:\Temp2\perlotSeeds\ternaryBlocksText 30 2 3</tt>
 
 
 <h2 id="link_maxWeight">ternarySeedMaxWeight: ternary seeds of maximum weight</h2>
