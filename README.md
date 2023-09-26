@@ -48,74 +48,27 @@ Ideally, we should find seeds of large weight, since by increasing the weight by
 
 Standard seeds are <i>binary</i> when there are only two states (<b><tt>1</tt></b> or <b><tt>#</tt></b> for <i>match</i> and <b><tt>0</tt></b> or <b><tt>&#95;</tt></b> for ``don't care symbol''). In genetics, the chance to have a <b>transition</b> mutation (<tt>A</tt> &harr; <tt>G</tt> or <tt>C</tt> &harr; <tt>T</tt>) is often twice higher than a <b>transversion</b> mutation (<tt>A</tt> &harr; <tt>C</tt>, <tt>A</tt> &harr; <tt>T</tt>, <tt>G</tt> &harr; <tt>C</tt>, <tt>G</tt> &harr; <tt>T</tt>). Transition-constrained seeds use ternary alphabet {<b><tt>#</tt></b>, <b><tt>@</tt></b>, <b><tt>&#95;</tt></b>} where <b><tt>@</tt></b> is for a match or a transition mismatch.
 
-We may use a contiguous seed of length 10, i.e. <tt>1111111111</tt>. In this case all symbols are taken into account and we may say that the symbol seqeunces are not the same (7 symbols match, out of 10). 
-
-and seed 
-
-<tt>1011010111</tt>. 
-Let there be two sequences and weSuppose there is a long reference sequence (for a human genome it may have a length of 3.2 billion symbols). There is also a set of short sequences (called <i>reads</i>), their size is around 50-300 symbols. We know that the reads are chunks of another long sequence which is in some way is close to the reference sequence. Our goal is to align those reads with respect to the reference sequence. 
-
-Suppose, we have a reference sequence
-<tt>ACGACAACCTTGTCGTTGGAGATCGGAAGAGCACACGTCTGAAC</tt>
-and a read
-<tt>TAGGTGCTCG</tt>. We shift the read with respect to the reference sequence, so
-
-<table>
-  <tr><th><tt>ACGACAACCTTGTCGTTGGAGATCGGAAGAGCACACGTCTGAAC</tt></th></tr>
-  <tr><th><tt>_______________TAGGTGCTCG___________________</tt></th></tr>
-  <tr><th><tt>_______________1011010111___________________</tt></th></tr>
-</table>
-
-We use Hamming distance to measure the similarity of these two sequences. If two symbols at the same position are identical, then the distance is 0, otherwise, the distance is 1. The total distance is the sum of elementwise distances. Ideally, we would like to position the second sequence in such a way, so the distance attains its minimum value (or is within some ranges of values). 
-
-The standard approach in the case of a long sequence is to consider its smaller chunks and find their positions within the reference sequence. After a read is pre-aligned, we calculate the final similarity score based on Hamming or other distances. The goal of this project is to pre-align reads (find candidate positions within the reference sequence).
-
-Reads may have various mutations. Therefore there can be some mismatches (when the reference sequence and a read have different symbols at the same positions), insertions or deletions of symbols. Here we consider only mismatches. 
-
-If there are several mutations, then using contiguous chunks of symbols to identify candidate positions may not work. Therefore it is better to consider chunks with some symbols to be ignored when sequences are compared. 
-
-For this purpose we used a <i>seed</i>, a sequence of 1 and 0, of length n<sub>S</sub> (the total number of all symbols). By seed's <i>weight</i> we call the total number of 1s in the seed. It is assumed that the seed starts and ends with 1-element.
-
-Let us consider a seed <tt>1111</tt> of weight 4. We may see that this seed cannot be used to find a candidate position, since there are no all same symbols defined by a shifted seed.
-
-<table>
-  <tr><th>Seed</th><th>Seq 1</th><th>Seq 2</th><th></th></tr>
-  <tr><th></th><th><tt>TTGGAGATCG</tt></th><th><tt>TAGGTGCTCG</tt></th><th></th></tr>
-  <tr><th><tt>1111______</tt></th><th><tt>TTGG______</tt></th><th><tt>TAGG______</tt></th><th>&#10060;</th></tr>
-  <tr><th><tt>_1111_____</tt></th><th><tt>_TGGA_____</tt></th><th><tt>_AGGT_____</tt></th><th>&#10060;</th></tr>
-  <tr><th><tt>__1111____</tt></th><th><tt>__GGAG____</tt></th><th><tt>__GGTG____</tt></th><th>&#10060;</th></tr>
-  <tr><th><tt>___1111___</tt></th><th><tt>___GAGA___</tt></th><th><tt>___GTGC___</tt></th><th>&#10060;</th></tr>
-  <tr><th><tt>____1111__</tt></th><th><tt>____AGAT__</tt></th><th><tt>____TGCT__</tt></th><th>&#10060;</th></tr> 
-  <tr><th><tt>_____1111_</tt></th><th><tt>_____GATC_</tt></th><th><tt>_____GCTC_</tt></th><th>&#10060;</th></tr>
-  <tr><th><tt>______1111</tt></th><th><tt>______ATCG</tt></th><th><tt>______CTCG</tt></th><th>&#10060;</th></tr>
-</table>
+We construct ternary seeds as periodic seeds when there is a whole number of repeatitions of a string followed by a remainder. 
 
 
-However, if we consider a seed <tt>101101</tt> (it also has weight 4, we call this seed a <i>spaced seed</i>), then there is one position when two sequences are fully matched.
+<h2 id="link_binaryLevel">periodicBinaryBlockLevel: binary blocks of less than maximum weight</h2>
 
-<table>
-  <tr><th>Seed</th><th>Seq 1</th><th>Seq 2</th><th></th></tr>
-  <tr><th></th><th><tt>TTGGAGATCG</tt></th><th><tt>TAGGTGCTCG</tt></th><th></th></tr>
-  <tr><th><tt>101101____</tt></th><th><tt>T_GG_G____</tt></th><th><tt>T_GG_G____</tt></th><th>&#10004;</th></tr>  
-  <tr><th><tt>_101101___</tt></th><th><tt>_T_GA_A___</tt></th><th><tt>_A_GT_C___</tt></th><th>&#10060;</th></tr>
-  <tr><th><tt>__101101__</tt></th><th><tt>__G_AG_T__</tt></th><th><tt>__G_TG_T__</tt></th><th>&#10060;</th></tr>
-  <tr><th><tt>___101101_</tt></th><th><tt>___G_GA_C_</tt></th><th><tt>___G_GC_C_</tt></th><th>&#10060;</th></tr>
-  <tr><th><tt>____101101</tt></th><th><tt>____A_AT_G</tt></th><th><tt>____T_CT_G</tt></th><th>&#10060;</th></tr>
-</table>
-
-<h2 id="link_check">checkSeedClassic/checkSeed128: Check if a seed is valid</h2>
-
-Suppose we are given a seed of length <tt>L</tt>. We also know the maximum number <tt>m</tt> of mismatches and read's length <tt>r</tt>. We create <tt>T = r-L+1</tt> rows and pad the seed with 0s (just adding extra zero to the left for each new row and removing one zero from the right). A seed is valid if for any arbitrary <tt>m</tt> columns of the matrix there is at least one row such that all corresponding elements are zeros.
+In PerFSeeB project we have gnerated periodic binary blocks of maximum weight for a given number of mismatches. We may reuse results obtained in that project and also generate binary blocks that have less than the maximum weight.
 
 <h3>Parameters</h3>
 
 <ol>
-  <li>Read length (integer)</li>
-  <li>Number of mismatches (integer)</li>
-  <li>Seed (string of 1 or 0)</li>
+  <li>Input folder (binary blocks obtained in PerFSeeB project)</li>
+  <li>Output folder</li>
+  <li>Number of mismatches (from 2 to 9)</li>
+  <li>Size of blocks (from 3 to 50)</li>
+  <li>Minimum level (0 when maximum weight)</li>
+  <li>Maximum level</li>
 </ol>
 
-<tt>checkSeed128.exe 15 3 10110001</tt>
+<tt>periodicBinaryBlockLevel.exe E:\Temp2\perlotSeeds\binaryBlocksText E:\Temp2\perlotSeeds\binaryBlocks 4 24 0 2</tt>
+
+In most case it is enough to use level = 0 (85%), level = 2 only requires in a couple cases, the rest is for level = 1.
 
 For the output, we get the matrix and information about the seed's validity. If the seed is not valid we also get a list of columns when the requirements are not met. For example, we get columns 4, 8, 10 and the matrix (extra separator | is added for convenience).
 
