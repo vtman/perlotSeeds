@@ -8,6 +8,7 @@ Periodic lossless ternary seeds of maximum weight
     <li><a href="#link_ternaryBlock">periodicTernaryBlocks: ternary blocks of maximum weight</a></li>	  
  <li><a href="#link_bin2text">convertBin2Text: convert ternary blocks in binary format into a text</a></li>
     <li><a href="#link_maxWeight">ternarySeedMaxWeight: ternary seeds of maximum weight</a></li>
+    <li><a href="#link_data">Linked data</a></li>
   </ul>
   </nav>
 
@@ -93,7 +94,7 @@ Output files are in binary format. For a given block size <b>B</b>, we find the 
 
 Output files for ternary blocks are also in binary format. Each element of a block requires 2 bits (<tt>&#95;</tt> = <tt>0</tt> = <tt>00</tt>, <tt>#</tt> = <tt>1</tt> = <tt>01</tt>, <tt>@</tt> = <tt>2</tt> = <tt>10</tt>). So, a block of length 30 requires 8 bytes.
 
-Output files can be downloaded from <a href="zenodo.com">Zenodo</a>, and example output files are <a href="https://github.com/vtman/perlotSeeds/tree/main/ExampleTernaryBlocks">ExampleTernaryBlocks</a>. Some files are huge (tens of gigabytes). 
+Output files can be downloaded from <a href="https://zenodo.org/record/8370909">Zenodo</a>, and example output files are <a href="https://github.com/vtman/perlotSeeds/tree/main/ExampleTernaryBlocks">ExampleTernaryBlocks</a>. Some files are huge (tens of gigabytes). 
 
 <h2 id="link_bin2text">convertBin2Text: convert ternary blocks in binary format into a text</h2>
 
@@ -127,4 +128,6 @@ Output files can be downloaded from <a href="zenodo.com">Zenodo</a>, and example
 
 <tt>ternarySeedMaxWeight.exe E:\Temp2\TSeeds\Zen\TernaryBlocks\T3V4 E:\Temp2\perlotSeeds\ternarySeeds 3 4 3 50 50 80</tt>
 
+<h2 id="link_data">Linked data</h2>
 
+Binary, ternary blocks and best ternary seeds for reads of length 30 to 500 can be found in Zenodo archives (<a href="https://zenodo.org/record/8370909">10.5281/zenodo.8370909</a> and <a href="https://zenodo.org/record/8372887">10.5281/zenodo.8372887</a>).
