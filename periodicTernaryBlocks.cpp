@@ -39,16 +39,16 @@ public:
 	int printM(__m128i* vec);
 	int printTT(__m128i mA, __m128i mB);
 	int printTTbin(__m128i mA, __m128i mB);
-	int getDataTransition();
+	int getDataTransversion();
 	int getDataTot();
 
-	int freeDataTransition();
+	int freeDataTransversion();
 	int freeDataTotal();
 
 	blockData** pbd;
 
-	__m128i** pDataTransition, ** pDataTotal;
-	int nbTransition, nbc, nbTotal, nRemTransition, nRemTotal;
+	__m128i** pDataTransversion, ** pDataTotal;
+	int nbTransversion, nbc, nbTotal, nRemTransversion, nRemTotal;
 
 	FILE* fi, * fo;
 	char inputFolder[1000], inputFile[1000], outputFolder[1000], outputFile[1000];
@@ -56,13 +56,13 @@ public:
 	unsigned char* vD1, * vD2, * vD3;
 	int iOut[1000];
 	unsigned char uOut[1000];
-	int mT, mV, mTot, blockSize, iLevel, iLevelT, iLevelTot, L8;
+	int mT, mV, mTot, blockSize, iLevel, iLevelV, iLevelTot, L8;
 	int weightMin, weightMax, nThreads, nT, nCheck, nResult;
 	bool resST, isFileClosed;
 
 	__m128i* vmT, * vmCheck, * vmResult, mOne[128], mZero;
 
-	long long nRowTransition, nRowTotal;
+	long long nRowTransversion, nRowTotal;
 };
 
 blockData::blockData(int nT_in, int nCheck_in) {
@@ -109,10 +109,10 @@ int blockData::processLine(int lineIndex) {
 TBSeed::TBSeed() {
 	int a[4], i1, i2;
 
-	pDataTransition = nullptr;
+	pDataTransversion = nullptr;
 	pDataTotal = nullptr;
 	nbTotal = 0;
-	nbTransition = 0;
+	nbTransversion = 0;
 
 	vmCheck = nullptr;
 	vmResult = nullptr;
@@ -143,14 +143,14 @@ TBSeed::TBSeed() {
 	mZero = _mm_set1_epi32(0);
 }
 
-int TBSeed::freeDataTransition() {
-	if (pDataTransition != nullptr) {
-		for (int i = 0; i < nbTransition; i++) {
-			if (pDataTransition[i] != nullptr) {
-				free(pDataTransition[i]); pDataTransition[i] = nullptr;
+int TBSeed::freeDataTransversion() {
+	if (pDataTransversion != nullptr) {
+		for (int i = 0; i < nbTransversion; i++) {
+			if (pDataTransversion[i] != nullptr) {
+				free(pDataTransversion[i]); pDataTransversion[i] = nullptr;
 			}
 		}
-		free(pDataTransition); pDataTransition = nullptr;
+		free(pDataTransversion); pDataTransversion = nullptr;
 	}
 	return 0;
 }
@@ -168,7 +168,7 @@ int TBSeed::freeDataTotal() {
 }
 
 TBSeed::~TBSeed() {
-	freeDataTransition();
+	freeDataTransversion();
 	freeDataTotal();
 
 	if (vmT != nullptr) { free(vmT); vmT = nullptr; }
@@ -217,20 +217,20 @@ int TBSeed::getWeight(int iw, int* wRes) {
 }
 
 
-int TBSeed::getDataTransition() {
+int TBSeed::getDataTransversion() {
 	long long fSize;
 	int nread, iA, aa[4];
 	char* vData;
 	__m128i mA;
 
-	if (iLevelT == 0 && mT == 1) {
-		nbTransition = 1;
-		nRemTransition = 1;
-		nRowTransition = 1;
+	if (iLevelV == 0 && mV == 1) {
+		nbTransversion = 1;
+		nRemTransversion = 1;
+		nRowTransversion = 1;
 
-		pDataTransition = (__m128i**)malloc(sizeof(__m128i*) * nbTransition);
+		pDataTransversion = (__m128i**)malloc(sizeof(__m128i*) * nbTransversion);
 
-		pDataTransition[0] = (__m128i*)malloc(sizeof(__m128i) * 1);
+		pDataTransversion[0] = (__m128i*)malloc(sizeof(__m128i) * 1);
 		aa[0] = 0;
 		aa[1] = 0;
 		aa[2] = 0;
@@ -240,14 +240,14 @@ int TBSeed::getDataTransition() {
 			aa[i / 32] |= 1 << (i & 31);
 		}
 
-		pDataTransition[0][0] = _mm_set_epi32(aa[3], aa[2], aa[1], aa[0]);
+		pDataTransversion[0][0] = _mm_set_epi32(aa[3], aa[2], aa[1], aa[0]);
 
-		printf("nRow (transition): %lli\n\n", nRowTransition);
+		printf("nRow (transversion): %lli\n\n", nRowTransversion);
 
 		return 0;
 	}
 
-	sprintf(inputFile, "%s/block_m_%i_len_%i_level_%i.bin", inputFolder, mT, blockSize, iLevelT);
+	sprintf(inputFile, "%s/block_m_%i_len_%i_level_%i.bin", inputFolder, mV, blockSize, iLevelV);
 	printf("Transition data: \"%s\"\n", inputFile);
 	fi = fopen(inputFile, "rb");
 	if (fi == nullptr) {
@@ -264,31 +264,31 @@ int TBSeed::getDataTransition() {
 	fSize = ftello64(fi);
 #endif
 
-	nRowTransition = fSize / (long long)(L8);
+	nRowTransversion = fSize / (long long)(L8);
 	rewind(fi);
 
-	nbTransition = nRowTransition / nbc;
-	nRemTransition = nRowTransition % nbc;
-	if (nRemTransition > 0) {
-		nbTransition++;
+	nbTransversion = nRowTransversion / nbc;
+	nRemTransversion = nRowTransversion % nbc;
+	if (nRemTransversion > 0) {
+		nbTransversion++;
 	}
 	else {
-		nRemTransition = nbc;
+		nRemTransversion = nbc;
 	}
 
-	pDataTransition = (__m128i**)malloc(sizeof(__m128i*) * nbTransition);
+	pDataTransversion = (__m128i**)malloc(sizeof(__m128i*) * nbTransversion);
 
 	nread = nbc;
 
 	vData = (char*)malloc(sizeof(char) * nbc * L8);
 
-	for (int i = 0; i < nbTransition; i++) {
-		if (i < nbTransition - 1) {
-			pDataTransition[i] = (__m128i*)malloc(sizeof(__m128i) * nbc);
+	for (int i = 0; i < nbTransversion; i++) {
+		if (i < nbTransversion - 1) {
+			pDataTransversion[i] = (__m128i*)malloc(sizeof(__m128i) * nbc);
 		}
 		else {
-			pDataTransition[i] = (__m128i*)malloc(sizeof(__m128i) * nRemTransition);
-			nread = nRemTransition;
+			pDataTransversion[i] = (__m128i*)malloc(sizeof(__m128i) * nRemTransversion);
+			nread = nRemTransversion;
 		}
 		fread(vData, sizeof(char), L8 * nread, fi);
 
@@ -303,7 +303,7 @@ int TBSeed::getDataTransition() {
 					iA = iA >> 1;
 				}
 			}
-			pDataTransition[i][j] = mA;
+			pDataTransversion[i][j] = mA;
 		}
 	}
 
@@ -311,7 +311,7 @@ int TBSeed::getDataTransition() {
 
 	fclose(fi); fi = nullptr;
 
-	printf("nRow (transition): %lli\n\n", nRowTransition);
+	printf("nRow (transversion): %lli\n\n", nRowTransversion);
 	return 0;
 }
 
@@ -496,22 +496,22 @@ int TBSeed::startProcessing(int narg, char** varg) {
 
 
 	for (int iL = 0; iL <= iLevel; iL++) {
-		iLevelT = iL;
+		iLevelV = iL;
 		iLevelTot = iLevel - iL;
-		printf("Level (transition): %i, level (total): %i\n\n", iLevelT, iLevelTot);
+		printf("Level (transversion): %i, level (total): %i\n\n", iLevelV, iLevelTot);
 
-		if (getDataTransition() != 0) return -3;
+		if (getDataTransversion() != 0) return -3;
 		if (getDataTot() != 0) return -4;
 
-		for (int ib1 = 0; ib1 < nbTransition; ib1++) {
-			printf("Block #%i of %i\n", ib1, nbTransition);
-			if (ib1 < nbTransition - 1) {
+		for (int ib1 = 0; ib1 < nbTransversion; ib1++) {
+			printf("Block #%i of %i\n", ib1, nbTransversion);
+			if (ib1 < nbTransversion - 1) {
 				nr1 = nbc;
 			}
 			else {
-				nr1 = nRemTransition;
+				nr1 = nRemTransversion;
 			}
-			pv1 = pDataTransition[ib1];
+			pv1 = pDataTransversion[ib1];
 
 			for (int i = 0; i < nr1; i++) {
 				mA = pv1[i];
@@ -541,7 +541,7 @@ int TBSeed::startProcessing(int narg, char** varg) {
 			}
 		}
 
-		freeDataTransition();
+		freeDataTransversion();
 		freeDataTotal();
 	}
 
