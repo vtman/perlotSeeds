@@ -1,0 +1,141 @@
+Read length: 87
+Mismatches (transition): 2
+Mismatches (transversion): 2
+Seed weight: 40.5
+
+Block size: 19
+Number of whole blocks: 3
+Remainder: 12
+##@#_#@#@@##__@@_@_
+Number of # in the block: 7
+Number of @ in the block: 7
+##@#_#@#@@##__@@_@_##@#_#@#@@##__@@_@_##@#_#@#@@##__@@_@_##@#_#@#@@##
+
+Block size: 19
+Number of whole blocks: 3
+Remainder: 12
+#@##_##@@@##__@@_@_
+Number of # in the block: 7
+Number of @ in the block: 7
+#@##_##@@@##__@@_@_#@##_##@@@##__@@_@_#@##_##@@@##__@@_@_#@##_##@@@##
+
+Block size: 19
+Number of whole blocks: 3
+Remainder: 12
+##@@_##@##@#__@@_@_
+Number of # in the block: 7
+Number of @ in the block: 7
+##@@_##@##@#__@@_@_##@@_##@##@#__@@_@_##@@_##@##@#__@@_@_##@@_##@##@#
+
+Block size: 19
+Number of whole blocks: 3
+Remainder: 12
+##@#_@###@#@__@@_@_
+Number of # in the block: 7
+Number of @ in the block: 7
+##@#_@###@#@__@@_@_##@#_@###@#@__@@_@_##@#_@###@#@__@@_@_##@#_@###@#@
+
+Block size: 19
+Number of whole blocks: 3
+Remainder: 12
+##@@#@#_#@##@__@_@_
+Number of # in the block: 7
+Number of @ in the block: 7
+##@@#@#_#@##@__@_@_##@@#@#_#@##@__@_@_##@@#@#_#@##@__@_@_##@@#@#_#@##
+
+Block size: 19
+Number of whole blocks: 3
+Remainder: 12
+##@#@#_#@@##__@_@_@
+Number of # in the block: 7
+Number of @ in the block: 7
+##@#@#_#@@##__@_@_@##@#@#_#@@##__@_@_@##@#@#_#@@##__@_@_@##@#@#_#@@##
+
+Block size: 19
+Number of whole blocks: 3
+Remainder: 12
+#@##@##_@@##@__@_@_
+Number of # in the block: 7
+Number of @ in the block: 7
+#@##@##_@@##@__@_@_#@##@##_@@##@__@_@_#@##@##_@@##@__@_@_#@##@##_@@##
+
+Block size: 19
+Number of whole blocks: 3
+Remainder: 12
+##@@@##_##@#@__@_@_
+Number of # in the block: 7
+Number of @ in the block: 7
+##@@@##_##@#@__@_@_##@@@##_##@#@__@_@_##@@@##_##@#@__@_@_##@@@##_##@#
+
+Block size: 19
+Number of whole blocks: 3
+Remainder: 12
+@#@###_@#@##__@_@_@
+Number of # in the block: 7
+Number of @ in the block: 7
+@#@###_@#@##__@_@_@@#@###_@#@##__@_@_@@#@###_@#@##__@_@_@@#@###_@#@##
+
+Block size: 19
+Number of whole blocks: 3
+Remainder: 12
+@#@###@_#@##@__@_@_
+Number of # in the block: 7
+Number of @ in the block: 7
+@#@###@_#@##@__@_@_@#@###@_#@##@__@_@_@#@###@_#@##@__@_@_@#@###@_#@##
+
+Block size: 19
+Number of whole blocks: 3
+Remainder: 12
+#@###@_#@##@__@_@_@
+Number of # in the block: 7
+Number of @ in the block: 7
+#@###@_#@##@__@_@_@#@###@_#@##@__@_@_@#@###@_#@##@__@_@_@#@###@_#@##@
+
+Block size: 19
+Number of whole blocks: 3
+Remainder: 12
+@##@#@_###@#__@_@_@
+Number of # in the block: 7
+Number of @ in the block: 7
+@##@#@_###@#__@_@_@@##@#@_###@#__@_@_@@##@#@_###@#__@_@_@@##@#@_###@#
+
+Block size: 19
+Number of whole blocks: 3
+Remainder: 12
+##_@#@#@#@##___@@@_
+Number of # in the block: 7
+Number of @ in the block: 7
+##_@#@#@#@##___@@@_##_@#@#@#@##___@@@_##_@#@#@#@##___@@@_##_@#@#@#@##
+
+Block size: 19
+Number of whole blocks: 3
+Remainder: 12
+##_#@#@#@@##___@@@_
+Number of # in the block: 7
+Number of @ in the block: 7
+##_#@#@#@@##___@@@_##_#@#@#@@##___@@@_##_#@#@#@@##___@@@_##_#@#@#@@##
+
+Block size: 19
+Number of whole blocks: 3
+Remainder: 12
+##_@@##@##@#___@@@_
+Number of # in the block: 7
+Number of @ in the block: 7
+##_@@##@##@#___@@@_##_@@##@##@#___@@@_##_@@##@##@#___@@@_##_@@##@##@#
+
+Block size: 19
+Number of whole blocks: 3
+Remainder: 12
+@#_###@@#@##___@@@_
+Number of # in the block: 7
+Number of @ in the block: 7
+@#_###@@#@##___@@@_@#_###@@#@##___@@@_@#_###@@#@##___@@@_@#_###@@#@##
+
+Block size: 19
+Number of whole blocks: 3
+Remainder: 12
+##_#@@###@#@___@@@_
+Number of # in the block: 7
+Number of @ in the block: 7
+##_#@@###@#@___@@@_##_#@@###@#@___@@@_##_#@@###@#@___@@@_##_#@@###@#@
+

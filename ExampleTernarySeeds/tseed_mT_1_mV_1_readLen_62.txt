@@ -1,0 +1,117 @@
+Read length: 62
+Mismatches (transition): 1
+Mismatches (transversion): 1
+Seed weight: 41.5
+
+Block size: 11
+Number of whole blocks: 4
+Remainder: 8
+##@#####_@@
+Number of # in the block: 7
+Number of @ in the block: 3
+##@#####_@@##@#####_@@##@#####_@@##@#####_@@##@#####
+
+Block size: 11
+Number of whole blocks: 4
+Remainder: 8
+##@#####@_@
+Number of # in the block: 7
+Number of @ in the block: 3
+##@#####@_@##@#####@_@##@#####@_@##@#####@_@##@#####
+
+Block size: 11
+Number of whole blocks: 4
+Remainder: 8
+##@#####@@_
+Number of # in the block: 7
+Number of @ in the block: 3
+##@#####@@_##@#####@@_##@#####@@_##@#####@@_##@#####
+
+Block size: 11
+Number of whole blocks: 4
+Remainder: 8
+#####@##@@_
+Number of # in the block: 7
+Number of @ in the block: 3
+#####@##@@_#####@##@@_#####@##@@_#####@##@@_#####@##
+
+Block size: 11
+Number of whole blocks: 4
+Remainder: 8
+#####@##@_@
+Number of # in the block: 7
+Number of @ in the block: 3
+#####@##@_@#####@##@_@#####@##@_@#####@##@_@#####@##
+
+Block size: 11
+Number of whole blocks: 4
+Remainder: 8
+#####@##_@@
+Number of # in the block: 7
+Number of @ in the block: 3
+#####@##_@@#####@##_@@#####@##_@@#####@##_@@#####@##
+
+Block size: 13
+Number of whole blocks: 3
+Remainder: 11
+##@#@######_@
+Number of # in the block: 9
+Number of @ in the block: 3
+##@#@######_@##@#@######_@##@#@######_@##@#@######
+
+Block size: 13
+Number of whole blocks: 3
+Remainder: 11
+##@#@######@_
+Number of # in the block: 9
+Number of @ in the block: 3
+##@#@######@_##@#@######@_##@#@######@_##@#@######
+
+Block size: 13
+Number of whole blocks: 3
+Remainder: 11
+######@#@##@_
+Number of # in the block: 9
+Number of @ in the block: 3
+######@#@##@_######@#@##@_######@#@##@_######@#@##
+
+Block size: 13
+Number of whole blocks: 3
+Remainder: 11
+######@#@##_@
+Number of # in the block: 9
+Number of @ in the block: 3
+######@#@##_@######@#@##_@######@#@##_@######@#@##
+
+Block size: 13
+Number of whole blocks: 3
+Remainder: 11
+#@#####@###_@
+Number of # in the block: 9
+Number of @ in the block: 3
+#@#####@###_@#@#####@###_@#@#####@###_@#@#####@###
+
+Block size: 13
+Number of whole blocks: 3
+Remainder: 11
+#@#####@###@_
+Number of # in the block: 9
+Number of @ in the block: 3
+#@#####@###@_#@#####@###@_#@#####@###@_#@#####@###
+
+Block size: 13
+Number of whole blocks: 3
+Remainder: 11
+###@#####@#@_
+Number of # in the block: 9
+Number of @ in the block: 3
+###@#####@#@_###@#####@#@_###@#####@#@_###@#####@#
+
+Block size: 13
+Number of whole blocks: 3
+Remainder: 11
+###@#####@#_@
+Number of # in the block: 9
+Number of @ in the block: 3
+###@#####@#_@###@#####@#_@###@#####@#_@###@#####@#
+

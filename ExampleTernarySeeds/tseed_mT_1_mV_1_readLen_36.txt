@@ -1,0 +1,101 @@
+Read length: 36
+Mismatches (transition): 1
+Mismatches (transversion): 1
+Seed weight: 22
+
+Block size: 7
+Number of whole blocks: 4
+Remainder: 2
+###_@#@
+Number of # in the block: 4
+Number of @ in the block: 2
+###_@#@###_@#@###_@#@###_@#@##
+
+Block size: 7
+Number of whole blocks: 4
+Remainder: 2
+##_@#@#
+Number of # in the block: 4
+Number of @ in the block: 2
+##_@#@###_@#@###_@#@###_@#@###
+
+Block size: 7
+Number of whole blocks: 4
+Remainder: 2
+###@_#@
+Number of # in the block: 4
+Number of @ in the block: 2
+###@_#@###@_#@###@_#@###@_#@##
+
+Block size: 7
+Number of whole blocks: 4
+Remainder: 2
+##@_#@#
+Number of # in the block: 4
+Number of @ in the block: 2
+##@_#@###@_#@###@_#@###@_#@###
+
+Block size: 7
+Number of whole blocks: 4
+Remainder: 2
+###@@#_
+Number of # in the block: 4
+Number of @ in the block: 2
+###@@#_###@@#_###@@#_###@@#_##
+
+Block size: 7
+Number of whole blocks: 4
+Remainder: 2
+##@@#_#
+Number of # in the block: 4
+Number of @ in the block: 2
+##@@#_###@@#_###@@#_###@@#_###
+
+Block size: 7
+Number of whole blocks: 4
+Remainder: 2
+###@#@_
+Number of # in the block: 4
+Number of @ in the block: 2
+###@#@_###@#@_###@#@_###@#@_##
+
+Block size: 7
+Number of whole blocks: 4
+Remainder: 2
+##@#@_#
+Number of # in the block: 4
+Number of @ in the block: 2
+##@#@_###@#@_###@#@_###@#@_###
+
+Block size: 7
+Number of whole blocks: 4
+Remainder: 2
+###@#_@
+Number of # in the block: 4
+Number of @ in the block: 2
+###@#_@###@#_@###@#_@###@#_@##
+
+Block size: 7
+Number of whole blocks: 4
+Remainder: 2
+##@#_@#
+Number of # in the block: 4
+Number of @ in the block: 2
+##@#_@###@#_@###@#_@###@#_@###
+
+Block size: 7
+Number of whole blocks: 4
+Remainder: 2
+###_#@@
+Number of # in the block: 4
+Number of @ in the block: 2
+###_#@@###_#@@###_#@@###_#@@##
+
+Block size: 7
+Number of whole blocks: 4
+Remainder: 2
+##_#@@#
+Number of # in the block: 4
+Number of @ in the block: 2
+##_#@@###_#@@###_#@@###_#@@###
+

@@ -1,0 +1,21 @@
+Read length: 145
+Mismatches (transition): 3
+Mismatches (transversion): 2
+Seed weight: 69.5
+
+Block size: 26
+Number of whole blocks: 4
+Remainder: 16
+#@###@_@##@#@@#@__#__@@@@_
+Number of # in the block: 9
+Number of @ in the block: 11
+#@###@_@##@#@@#@__#__@@@@_#@###@_@##@#@@#@__#__@@@@_#@###@_@##@#@@#@__#__@@@@_#@###@_@##@#@@#@__#__@@@@_#@###@_@##@#@@#@
+
+Block size: 26
+Number of whole blocks: 4
+Remainder: 16
+@#@@#_##@@@###@#___@@_@#@_
+Number of # in the block: 9
+Number of @ in the block: 11
+@#@@#_##@@@###@#___@@_@#@_@#@@#_##@@@###@#___@@_@#@_@#@@#_##@@@###@#___@@_@#@_@#@@#_##@@@###@#___@@_@#@_@#@@#_##@@@###@#
+

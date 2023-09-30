@@ -1,0 +1,101 @@
+Read length: 147
+Mismatches (transition): 3
+Mismatches (transversion): 1
+Seed weight: 88.5
+
+Block size: 31
+Number of whole blocks: 3
+Remainder: 24
+#@##@@#####@@@##@###@#@#_@@@#@@
+Number of # in the block: 16
+Number of @ in the block: 14
+#@##@@#####@@@##@###@#@#_@@@#@@#@##@@#####@@@##@###@#@#_@@@#@@#@##@@#####@@@##@###@#@#_@@@#@@#@##@@#####@@@##@###@#@#
+
+Block size: 31
+Number of whole blocks: 3
+Remainder: 24
+#@##@@#####@@@##@###@#@#@_@@#@@
+Number of # in the block: 16
+Number of @ in the block: 14
+#@##@@#####@@@##@###@#@#@_@@#@@#@##@@#####@@@##@###@#@#@_@@#@@#@##@@#####@@@##@###@#@#@_@@#@@#@##@@#####@@@##@###@#@#
+
+Block size: 31
+Number of whole blocks: 3
+Remainder: 24
+#@##@@#####@@@##@###@#@#@@_@#@@
+Number of # in the block: 16
+Number of @ in the block: 14
+#@##@@#####@@@##@###@#@#@@_@#@@#@##@@#####@@@##@###@#@#@@_@#@@#@##@@#####@@@##@###@#@#@@_@#@@#@##@@#####@@@##@###@#@#
+
+Block size: 31
+Number of whole blocks: 3
+Remainder: 24
+#@##@@#####@@@##@###@#@#@@@_#@@
+Number of # in the block: 16
+Number of @ in the block: 14
+#@##@@#####@@@##@###@#@#@@@_#@@#@##@@#####@@@##@###@#@#@@@_#@@#@##@@#####@@@##@###@#@#@@@_#@@#@##@@#####@@@##@###@#@#
+
+Block size: 31
+Number of whole blocks: 3
+Remainder: 24
+#@##@@#####@@@##@###@#@#@@@@#_@
+Number of # in the block: 16
+Number of @ in the block: 14
+#@##@@#####@@@##@###@#@#@@@@#_@#@##@@#####@@@##@###@#@#@@@@#_@#@##@@#####@@@##@###@#@#@@@@#_@#@##@@#####@@@##@###@#@#
+
+Block size: 31
+Number of whole blocks: 3
+Remainder: 24
+#@##@@#####@@@##@###@#@#@@@@#@_
+Number of # in the block: 16
+Number of @ in the block: 14
+#@##@@#####@@@##@###@#@#@@@@#@_#@##@@#####@@@##@###@#@#@@@@#@_#@##@@#####@@@##@###@#@#@@@@#@_#@##@@#####@@@##@###@#@#
+
+Block size: 31
+Number of whole blocks: 3
+Remainder: 24
+#@#@###@##@@@#####@@##@#@@#@@@_
+Number of # in the block: 16
+Number of @ in the block: 14
+#@#@###@##@@@#####@@##@#@@#@@@_#@#@###@##@@@#####@@##@#@@#@@@_#@#@###@##@@@#####@@##@#@@#@@@_#@#@###@##@@@#####@@##@#
+
+Block size: 31
+Number of whole blocks: 3
+Remainder: 24
+#@#@###@##@@@#####@@##@#@@#@@_@
+Number of # in the block: 16
+Number of @ in the block: 14
+#@#@###@##@@@#####@@##@#@@#@@_@#@#@###@##@@@#####@@##@#@@#@@_@#@#@###@##@@@#####@@##@#@@#@@_@#@#@###@##@@@#####@@##@#
+
+Block size: 31
+Number of whole blocks: 3
+Remainder: 24
+#@#@###@##@@@#####@@##@#@@#@_@@
+Number of # in the block: 16
+Number of @ in the block: 14
+#@#@###@##@@@#####@@##@#@@#@_@@#@#@###@##@@@#####@@##@#@@#@_@@#@#@###@##@@@#####@@##@#@@#@_@@#@#@###@##@@@#####@@##@#
+
+Block size: 31
+Number of whole blocks: 3
+Remainder: 24
+#@#@###@##@@@#####@@##@#@@#_@@@
+Number of # in the block: 16
+Number of @ in the block: 14
+#@#@###@##@@@#####@@##@#@@#_@@@#@#@###@##@@@#####@@##@#@@#_@@@#@#@###@##@@@#####@@##@#@@#_@@@#@#@###@##@@@#####@@##@#
+
+Block size: 31
+Number of whole blocks: 3
+Remainder: 24
+#@#@###@##@@@#####@@##@#@_#@@@@
+Number of # in the block: 16
+Number of @ in the block: 14
+#@#@###@##@@@#####@@##@#@_#@@@@#@#@###@##@@@#####@@##@#@_#@@@@#@#@###@##@@@#####@@##@#@_#@@@@#@#@###@##@@@#####@@##@#
+
+Block size: 31
+Number of whole blocks: 3
+Remainder: 24
+#@#@###@##@@@#####@@##@#_@#@@@@
+Number of # in the block: 16
+Number of @ in the block: 14
+#@#@###@##@@@#####@@##@#_@#@@@@#@#@###@##@@@#####@@##@#_@#@@@@#@#@###@##@@@#####@@##@#_@#@@@@#@#@###@##@@@#####@@##@#
+
