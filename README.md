@@ -130,4 +130,4 @@ Output files can be downloaded from <a href="https://zenodo.org/record/8370909">
 
 <h2 id="link_data">Linked data</h2>
 
-Binary, ternary blocks and best ternary seeds for reads of length 30 to 500 can be found in Zenodo archives (<a href="https://zenodo.org/record/8370909">10.5281/zenodo.8370909</a> and <a href="https://zenodo.org/record/8372887">10.5281/zenodo.8372887</a>).
+Binary, ternary blocks and best ternary seeds for reads of length 30 to 500 can be found in Zenodo archives (<a href="https://zenodo.org/record/8395215">10.5281/zenodo.8395215</a> and <a href="https://zenodo.org/record/8395813">10.5281/zenodo.8395813</a>).
