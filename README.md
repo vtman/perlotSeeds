@@ -72,7 +72,7 @@ In the PerFSeeB project, we have generated periodic binary blocks of the maximum
 
 In most cases, it is enough to use level = 0 (92%); level = 2 is only required in a couple of cases, and the rest is for level = 1.
 
-Output files can be downloaded from <a href="https://zenodo.org/record/8370909">Zenodo</a>, and example output files are <a href="https://github.com/vtman/perlotSeeds/tree/main/ExampleBinaryBlocks">ExampleBinaryBlocks</a>.
+Output files can be downloaded from <a href="https://zenodo.org/record/10641412">Zenodo</a>, and example output files are <a href="https://github.com/vtman/perlotSeeds/tree/main/ExampleBinaryBlocks">ExampleBinaryBlocks</a>.
 
 Output files are in binary format. For a given block size <b>B</b>, we find the smallest number <b>N</b> such that <b>B &#8804;8N</b>. So, for a block of length 30, we need 4 bytes to store. A hundred blocks require 100*4= 400 bytes.
 
