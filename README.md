@@ -70,7 +70,7 @@ In the PerFSeeB project, we have generated periodic binary blocks of the maximum
 
 <tt>periodicBinaryBlockLevel.exe E:\Temp2\perlotSeeds\binaryBlocksText E:\Temp2\perlotSeeds\binaryBlocks 4 24 0 2</tt>
 
-In most cases, it is enough to use level = 0 (85%); level = 2 is only required in a couple of cases, and the rest is for level = 1.
+In most cases, it is enough to use level = 0 (92%); level = 2 is only required in a couple of cases, and the rest is for level = 1.
 
 Output files can be downloaded from <a href="https://zenodo.org/record/8370909">Zenodo</a>, and example output files are <a href="https://github.com/vtman/perlotSeeds/tree/main/ExampleBinaryBlocks">ExampleBinaryBlocks</a>.
 
@@ -110,7 +110,6 @@ Output files can be downloaded from <a href="https://zenodo.org/record/8370909">
 
 <tt>convertBin2Text.exe E:\Temp2\perlotSeeds\ternaryBlocks E:\Temp2\perlotSeeds\ternaryBlocksText 30 2 3</tt>
 
-
 <h2 id="link_maxWeight">ternarySeedMaxWeight: ternary seeds of maximum weight</h2>
 
 <h3>Parameters</h3>
@@ -130,4 +129,4 @@ Output files can be downloaded from <a href="https://zenodo.org/record/8370909">
 
 <h2 id="link_data">Linked data</h2>
 
-Binary, ternary blocks and best ternary seeds for reads of length 30 to 500 can be found in Zenodo archives (<a href="https://zenodo.org/record/8395215">10.5281/zenodo.8395215</a> and <a href="https://zenodo.org/record/8395813">10.5281/zenodo.8395813</a>).
+Binary, ternary blocks and best ternary seeds for reads of length 30 to 500 can be found in Zenodo archives (<a href="https://zenodo.org/record/8395215">10.5281/zenodo.10641412</a> and <a href="https://zenodo.org/record/8395813">10.5281/zenodo.8395813</a>).
