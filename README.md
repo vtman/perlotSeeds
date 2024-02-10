@@ -140,7 +140,25 @@ Binary, ternary blocks and best ternary seeds for reads of length 30 to 500 can 
 
 <h2 id="link_fna2acgt">fna2acgt: convert a reference FNA file into a binary one</h2>
 
+We used Human genome assembly <a href="ftp.ncbi.nlm.nih.gov/genomes/all/GCA/000/001/405/GCA\_000001405.29\_GRCh38.p14">GFCh38.p14</a>
+
 <h2 id="link_fastq2bin">fastq2bin: convert FASTQ files (reads) into a binary ones</h2>
+
+All tests were performed for <a href="ftp.sra.ebi.ac.uk/vol1/fastq/ERR016/ERR016118">ERR016118</a> data. The corresponding "exact" alignment can be found in <a href="ftp.1000genomes.ebi.ac.uk/vol1/ftp/data_collections/1000\_genomes\_project/data/CHS/HG00513/alignment">HG00513</a> (Han Chinese South, 1000 genomes project). 
+
+<h3>Parameters</h3>
+
+<ol>
+  <li>Input folder (ternary blocks in binary format)</li>
+  <li>Output folder</li>
+  <li>Number of mismatches (transition)</li>
+  <li>Number of mismatches (transversion)</li>
+  <li>Block size (minimum)</li>
+  <li>Block size (maximum)</li>
+  <li>Read length (minimum)</li>
+  <li>Read length (maximum)</li>
+</ol>
+
 
 <h2 id="link_acgt2lib">acgt2lib: creating an unsorted library of records (signature, position)</h2>
 
