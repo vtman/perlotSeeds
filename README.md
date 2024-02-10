@@ -9,6 +9,11 @@ Periodic lossless ternary seeds of maximum weight
  <li><a href="#link_bin2text">convertBin2Text: convert ternary blocks in binary format into a text</a></li>
     <li><a href="#link_maxWeight">ternarySeedMaxWeight: ternary seeds of maximum weight</a></li>
     <li><a href="#link_data">Linked data</a></li>
+    <li><a href="#link_fna2acgt">fna2acgt: convert a reference FNA file into a binary one</a></li>
+    <li><a href="#link_fastq2bin">fastq2bin: convert FASTQ files (reads) into a binary ones</a></li>
+    <li><a href="#link_acgt2lib">acgt2lib: creating an unsorted library of records (signature, position)</a></li>
+    <li><a href="#link_sortLib">sortLib: sorting the library of records</a></li>
+    <li><a href="#link_fna2acgt">alignReads: simplistic alignment of paired-end reads</a></li>
   </ul>
   </nav>
 
