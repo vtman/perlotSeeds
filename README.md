@@ -154,6 +154,8 @@ Two files are created: name.acgt (binary output file) and name.iacgt (informatio
 
 <tt>fna2acgt.exe C:\Data\chr4.fna D:\Genome\Library\chr4 200</tt>
 
+There are two output files: <tt>D:\Genome\Library\chr4.acgt</tt> and <tt>D:\Genome\Library\chr4.iacgt</tt>
+
 <h2 id="link_fastq2bin">fastq2bin: convert FASTQ files (reads) into a binary ones</h2>
 
 All tests were performed for <a href="https://ftp.sra.ebi.ac.uk/vol1/fastq/ERR016/ERR016118">ERR016118</a> data. The corresponding "exact" alignment can be found in <a href="https://ftp.1000genomes.ebi.ac.uk/vol1/ftp/data_collections/1000_genomes_project/data/CHS/HG00513/alignment">HG00513</a> (Han Chinese South, 1000 genomes project). 
