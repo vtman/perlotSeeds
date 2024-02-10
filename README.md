@@ -135,3 +135,15 @@ Output files can be downloaded from <a href="https://zenodo.org/record/8370909">
 <h2 id="link_data">Linked data</h2>
 
 Binary, ternary blocks and best ternary seeds for reads of length 30 to 500 can be found in Zenodo archives (<a href="https://zenodo.org/record/8395215">10.5281/zenodo.10641412</a> and <a href="https://zenodo.org/record/8395813">10.5281/zenodo.8395813</a>).
+
+<hr>
+
+<h2 id="link_fna2acgt">fna2acgt: convert a reference FNA file into a binary one</h2>
+
+<h2 id="link_fastq2bin">fastq2bin: convert FASTQ files (reads) into a binary ones</h2>
+
+<h2 id="link_acgt2lib">acgt2lib: creating an unsorted library of records (signature, position)</h2>
+
+<h2 id="link_sortLib">sortLib: sorting the library of records</h2>
+
+<h2 id="link_fna2acgt">alignReads: simplistic alignment of paired-end reads</h2>
