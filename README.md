@@ -144,7 +144,7 @@ We used Human genome assembly <a href="https://ftp.ncbi.nlm.nih.gov/genomes/all/
 
 <h2 id="link_fastq2bin">fastq2bin: convert FASTQ files (reads) into a binary ones</h2>
 
-All tests were performed for <a href="ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR016/ERR016118">ERR016118</a> data. The corresponding "exact" alignment can be found in <a href="ftp://ftp.1000genomes.ebi.ac.uk/vol1/ftp/data_collections/1000_genomes_project/data/CHS/HG00513/alignment">HG00513</a> (Han Chinese South, 1000 genomes project). 
+All tests were performed for <a href="https://ftp.sra.ebi.ac.uk/vol1/fastq/ERR016/ERR016118">ERR016118</a> data. The corresponding "exact" alignment can be found in <a href="https://ftp.1000genomes.ebi.ac.uk/vol1/ftp/data_collections/1000_genomes_project/data/CHS/HG00513/alignment">HG00513</a> (Han Chinese South, 1000 genomes project). 
 
 <h3>Parameters</h3>
 
