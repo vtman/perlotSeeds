@@ -140,7 +140,19 @@ Binary, ternary blocks and best ternary seeds for reads of length 30 to 500 can 
 
 <h2 id="link_fna2acgt">fna2acgt: convert a reference FNA file into a binary one</h2>
 
-We used Human genome assembly <a href="https://ftp.ncbi.nlm.nih.gov/genomes/all/GCA/000/001/405/GCA_000001405.29_GRCh38.p14">GFCh38.p14</a>
+We used Human genome assembly <a href="https://ftp.ncbi.nlm.nih.gov/genomes/all/GCA/000/001/405/GCA_000001405.29_GRCh38.p14">GRCh38.p14</a>
+
+<h3>Parameters</h3>
+
+<ol>
+  <li>Input file (FNA file)</li>
+  <li>Output folder (+ prefix)</li>
+  <li>Gap size (> 0)</li>
+</ol>
+
+Two files are created: name.acgt (binary output file) and name.iacgt (information/text file).
+
+<tt>fna2acgt.exe C:\Data\chr4.fna D:\Genome\Library\chr4 200</tt>
 
 <h2 id="link_fastq2bin">fastq2bin: convert FASTQ files (reads) into a binary ones</h2>
 
