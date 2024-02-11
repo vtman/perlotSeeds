@@ -170,7 +170,7 @@ All tests were performed for <a href="https://ftp.sra.ebi.ac.uk/vol1/fastq/ERR01
 
 <tt>fastq2bin.exe D:\Genome\Cram\DRR346006_1.fastq D:\Genome\Cram\DRR346006_1.fqb 150</tt>
 
-FQB files format: length of reads (32-bit integer), total number of reads (64-bit integer), reads in binary format. For example, if the length of reads is <tt>76</tt>, then we round it up to the nearest multiple of <tt>32</tt>, i.e. <tt>96</tt> (in case of reads' length <tt>150</tt>, we round it up to <tt>160</tt>). Then divide by <tt>32</tt>, get <tt>M</tt> (and get <tt>3</tt> or <tt>5</tt>, respectively). So, each read in binary format will require <tt>16*M</tt> bytes. Each 32 bits correspond to to presence/absense of <tt>A</tt>, <tt>C</tt>, <tt>G</tt>, <tt>T</tt>. 
+FQB files format: length of reads (32-bit integer), total number of reads (64-bit integer), reads in binary format. For example, if the length of reads is <tt>76</tt>, then we round it up to the nearest multiple of <tt>32</tt>, i.e. <tt>96</tt> (in case of reads' length <tt>150</tt>, we round it up to <tt>160</tt>). Then divide by <tt>32</tt>, get <tt>M</tt> (<tt>3</tt> or <tt>5</tt>, respectively). So, each read in binary format will require <tt>16*M</tt> bytes. Each 32 bits correspond to to presence/absense of <tt>A</tt>, <tt>C</tt>, <tt>G</tt>, <tt>T</tt>. 
 
 
 <h2 id="link_acgt2lib">acgt2lib: creating an unsorted library of records (signature, position)</h2>
