@@ -230,3 +230,18 @@ FQB files format: length of reads (32-bit integer), total number of reads (64-bi
 
 
 <h2 id="link_alignReads">alignReads: simplistic alignment of paired-end reads</h2>
+
+All parameters are in <tt>settings.txt</tt> file
+
+<ol>
+  <li>Path to the first binary reads file (created by <b>fastq2bin</b>): <tt>D:\Genome\Data\ERR016118_1.fqb</tt></li>
+  <li>Path to the second binary reads file: <tt>D:\Genome\Data\ERR016118_2.fqb</tt></li>
+  <li>Path to the library (containing <tt>original</tt> and <tt>sorted</tt> folders): <tt>D:\Genome\DataB32</tt></li>
+  <li>Reference ACGT file: <tt>D:\Genome\RefData\ref.acgt</tt></li>
+  <li>Info reference file (IACGT): <tt>D:\Genome\RefData\ref.iacgt</tt></li>
+  <li>Output folder: <tt>D:\Genome\output\B32</tt></li>
+  <li>Distance between start position of read's seqeunces, minimum: <tt>200</tt></li>
+  <li>Distance, maximum: <tt>800</tt></li>
+</ol>
+
+<tt>alignReads.exe</tt>
