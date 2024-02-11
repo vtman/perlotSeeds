@@ -152,6 +152,10 @@ We used Human genome assembly <a href="https://ftp.ncbi.nlm.nih.gov/genomes/all/
 
 Two files are created: name.acgt (binary output file) and name.iacgt (information/text file).
 
+*.acgt file constists of 16-byte blocks. Each block is four 32-bit componenets to store information about presence/absense of four nucleotides <tt>A</tt>, <tt>C</tt>, <tt>G</tt>, <tt>T</tt>.
+
+<tt>*.iacgt</tt> file consists of 3 fields for each chromosome (each filed is on a new line): name of the chromosom as it is written in the FNA file, starting position in the *.acgt file (in bytes), number of nucleotides.
+
 <tt>fna2acgt.exe C:\Data\chr4.fna D:\Genome\Library\chr4 200</tt>
 
 There are two output files: <tt>D:\Genome\Library\chr4.acgt</tt> and <tt>D:\Genome\Library\chr4.iacgt</tt>
