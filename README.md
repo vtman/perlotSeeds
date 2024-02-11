@@ -231,6 +231,8 @@ FQB files format: length of reads (32-bit integer), total number of reads (64-bi
 
 <h2 id="link_alignReads">alignReads: simplistic alignment of paired-end reads</h2>
 
+We load the reference library in memory. Then mutiple threads start to process chuncks of binary reads files (FQB files), the size of chunks is defined by <tt>MAX_READ_COUNT</tt> (set to <tt>10000</tt>). We read two sequences for each read, create their reversed counterparts and find <i>signatures</i> using the specified seeds. Then find the corresponding position in the reference sequence and merge them into four lists. Since we have paired-edn reads, we have to  check in the positions from the lists for two seqeucnes are within a specifeid range. For those successful pairs of positions we perform alignment and count the number of transitional and transersional mismataches. In the output folder we have files for each group of <tt>MAX_READ_COUNT</tt> reads with information related to the total number of signatures found in the merged lists and detailed information about sucessful alignments. There is also <tt>statInfo.txt</tt> where a shortened information is provided (number of candidate positions, numbe rof successful alignment and the best score).
+
 All parameters are in <tt>settings.txt</tt> file
 
 <ol>
