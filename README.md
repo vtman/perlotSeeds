@@ -178,7 +178,7 @@ The code is written for specific seeds. You should uncomment one of <tt>#define 
 
 <tt>const int nLetters = 4;</tt>
 
-This means there will be <tt>2^(8*nLetters) = 2^16 = 65536</tt> output files created in <tt>original</tt> subfolder. Parameter <tt>nLetters = 4</tt> seems to be optimal for the Human genome (not so many small files). As each record in a file will have the same <tt>8*nLetters</tt> bits, we remove them to save space.
+This means there will be <tt>2<sup>8 nLetters</sup> = 2<sup>16</sup> = 65536</tt> output files created in <tt>original</tt> subfolder. Parameter <tt>nLetters = 4</tt> seems to be optimal for the Human genome (not so many small files). As each record in a file will have the same <tt>8 nLetters</tt> bits, we remove them to save space.
 
 <tt>const int indexLevel = 14;</tt>
 
