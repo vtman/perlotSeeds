@@ -24,7 +24,7 @@ It is possible to download Intel C compiler (can be obtained from <a href="https
 
 <tt>icpc codeName.cpp -mssse3 -std=c++17 -qopenmp -o codeName.exe</tt>
 
-In some (serial application) <tt>-qopenmp</tt> option can be omitted. For Windows, it is possible to install <a = href="https://visualstudio.microsoft.com/vs/">Visual Studio</a> (before installation of the oneAPI toolkits). Some libraries are slightly different for Windows and Linux, so for Windows uncomment
+In some (serial application) <tt>-qopenmp</tt> option can be omitted. For Windows, it is possible to install <a href="https://visualstudio.microsoft.com/vs/">Visual Studio</a> (before installation of the oneAPI toolkits). Some libraries are slightly different for Windows and Linux, so for Windows uncomment
 
 <tt>#define WIN32 1</tt>
 
