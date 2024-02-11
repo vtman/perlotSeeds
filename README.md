@@ -14,7 +14,7 @@ Periodic lossless ternary seeds of maximum weight
     <li><a href="#link_acgt2lib">acgt2lib: creating an unsorted library of records (signature, position)</a></li>
     <li><a href="#link_sortLib">sortLib: sorting the library of records</a></li>
     <li><a href="#link_fastq2bin">fastq2bin: convert FASTQ files (reads) into a binary ones</a></li>
-    <li><a href="#link_fna2acgt">alignReads: simplistic alignment of paired-end reads</a></li>
+    <li><a href="#link_alignReads">alignReads: simplistic alignment of paired-end reads</a></li>
   </ul>
   </nav>
 
