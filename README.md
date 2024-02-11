@@ -190,6 +190,27 @@ FQB files format: length of reads (32-bit integer), total number of reads (64-bi
 
 <h2 id="link_acgt2lib">acgt2lib: creating an unsorted library of records (signature, position)</h2>
 
+The code is written for specific seeds. You should uncomment one of <tt>#define CASE_...</tt> (and comment out the other lines). You should use the same seed also for <b>alignReads</b>, so the same step for that code. You may also modify two lines
+
+<tt>const int nLetters = 4;</tt>
+
+This means there will be <tt>2^(8*nLetters) = 2^16 = 65536</tt> output files created in <tt>original</tt> subfolder. Parameter <tt>nLetters = 4</tt> seems to be optimal for the Human genome (not so many small files).
+
+<tt>const int indexLevel = 14;</tt>
+
+This parameter will be used when sorting operation is performed in <tt>sortLib</tt> (we create a list of starting positions of records).
+
+<h3>Parameters</h3>
+
+<ol>
+  <li>Path to the ACGT (reference file, see <b>fna2acgt</b>)</li>
+  <li>Output folder</li>
+</ol>
+
+<tt>acgt2lib.exe D:\Genome\Cram\ref38.acgt D:\Genome\library</tt>
+
+The output folder MUST contain two subfolder <tt>original</tt> and <tt>sorted</tt>. The code will also produce <tt>info.txt</tt> file with short information about the parameters (this file will be used by <b>sortLib</b>).
+
 <h2 id="link_sortLib">sortLib: sorting the library of records</h2>
 
-<h2 id="link_fna2acgt">alignReads: simplistic alignment of paired-end reads</h2>
+<h2 id="link_alignReads">alignReads: simplistic alignment of paired-end reads</h2>
