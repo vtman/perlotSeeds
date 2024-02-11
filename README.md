@@ -11,9 +11,9 @@ Periodic lossless ternary seeds of maximum weight
     <li><a href="#link_maxWeight">ternarySeedMaxWeight: ternary seeds of maximum weight</a></li>
     <li><a href="#link_data">Linked data</a></li>
     <li><a href="#link_fna2acgt">fna2acgt: convert a reference FNA file into a binary one</a></li>
-    <li><a href="#link_fastq2bin">fastq2bin: convert FASTQ files (reads) into a binary ones</a></li>
     <li><a href="#link_acgt2lib">acgt2lib: creating an unsorted library of records (signature, position)</a></li>
     <li><a href="#link_sortLib">sortLib: sorting the library of records</a></li>
+    <li><a href="#link_fastq2bin">fastq2bin: convert FASTQ files (reads) into a binary ones</a></li>
     <li><a href="#link_fna2acgt">alignReads: simplistic alignment of paired-end reads</a></li>
   </ul>
   </nav>
@@ -171,22 +171,6 @@ Two files are created: name.acgt (binary output file) and name.iacgt (informatio
 
 There are two output files: <tt>D:\Genome\Library\chr4.acgt</tt> and <tt>D:\Genome\Library\chr4.iacgt</tt>
 
-<h2 id="link_fastq2bin">fastq2bin: convert FASTQ files (reads) into a binary ones</h2>
-
-All tests were performed for <a href="https://ftp.sra.ebi.ac.uk/vol1/fastq/ERR016/ERR016118">ERR016118</a> data. The corresponding "exact" alignment can be found in <a href="https://ftp.1000genomes.ebi.ac.uk/vol1/ftp/data_collections/1000_genomes_project/data/CHS/HG00513/alignment">HG00513</a> (Han Chinese South, 1000 genomes project). 
-
-<h3>Parameters</h3>
-
-<ol>
-  <li>Input file (FASTQ format)</li>
-  <li>Output file (FQB format)</li>
-  <li>Length of reads</li>
-</ol>
-
-<tt>fastq2bin.exe D:\Genome\Cram\DRR346006_1.fastq D:\Genome\Cram\DRR346006_1.fqb 150</tt>
-
-FQB files format: length of reads (32-bit integer), total number of reads (64-bit integer), reads in binary format. For example, if the length of reads is <tt>76</tt>, then we round it up to the nearest multiple of <tt>32</tt>, i.e. <tt>96</tt> (in case of reads' length <tt>150</tt>, we round it up to <tt>160</tt>). Then divide by <tt>32</tt>, get <tt>M</tt> (<tt>3</tt> or <tt>5</tt>, respectively). So, each read in binary format will require <tt>16*M</tt> bytes. Each 32 bits correspond to to presence/absense of <tt>A</tt>, <tt>C</tt>, <tt>G</tt>, <tt>T</tt>. 
-
 
 <h2 id="link_acgt2lib">acgt2lib: creating an unsorted library of records (signature, position)</h2>
 
@@ -194,7 +178,7 @@ The code is written for specific seeds. You should uncomment one of <tt>#define 
 
 <tt>const int nLetters = 4;</tt>
 
-This means there will be <tt>2^(8*nLetters) = 2^16 = 65536</tt> output files created in <tt>original</tt> subfolder. Parameter <tt>nLetters = 4</tt> seems to be optimal for the Human genome (not so many small files).
+This means there will be <tt>2^(8*nLetters) = 2^16 = 65536</tt> output files created in <tt>original</tt> subfolder. Parameter <tt>nLetters = 4</tt> seems to be optimal for the Human genome (not so many small files). As each record in a file will have the same <tt>8*nLetters</tt> bits, we remove them to save space.
 
 <tt>const int indexLevel = 14;</tt>
 
@@ -212,5 +196,37 @@ This parameter will be used when sorting operation is performed in <tt>sortLib</
 The output folder MUST contain two subfolder <tt>original</tt> and <tt>sorted</tt>. The code will also produce <tt>info.txt</tt> file with short information about the parameters (this file will be used by <b>sortLib</b>).
 
 <h2 id="link_sortLib">sortLib: sorting the library of records</h2>
+
+For each binary file in <tt>original</tt> subfolder we sort th records and also create an index array of starting records (to simplify search in <b>alignReads</b>).
+
+<h3>Parameters</h3>
+
+<ol>
+  <li>Input/output folder</li>
+</ol>
+
+<tt>sortLib.exe D:\Genome\library</tt>
+
+The code use the file created by <tt>acgt2lib.exe</tt>, so both <tt>original</tt> and <tt>sorted</tt> subfolders should be present as well as <tt>info.txt</tt> file. An extra <tt>stat.txt</tt> will be created in the main folder to provide statistics how many signatures have a given number of same records. Note that for seeds of small weight you may need to increase the length of a storage array
+
+<tt>const int NSIZE = 1000000;</tt>
+
+<h2 id="link_fastq2bin">fastq2bin: convert FASTQ files (reads) into a binary ones</h2>
+
+All tests were performed for <a href="https://ftp.sra.ebi.ac.uk/vol1/fastq/ERR016/ERR016118">ERR016118</a> data. The corresponding "exact" alignment can be found in <a href="https://ftp.1000genomes.ebi.ac.uk/vol1/ftp/data_collections/1000_genomes_project/data/CHS/HG00513/alignment">HG00513</a> (Han Chinese South, 1000 genomes project). 
+
+<h3>Parameters</h3>
+
+<ol>
+  <li>Input file (FASTQ format)</li>
+  <li>Output file (FQB format)</li>
+  <li>Length of reads</li>
+</ol>
+
+<tt>fastq2bin.exe D:\Genome\Cram\DRR346006_1.fastq D:\Genome\Cram\DRR346006_1.fqb 150</tt>
+
+FQB files format: length of reads (32-bit integer), total number of reads (64-bit integer), reads in binary format. For example, if the length of reads is <tt>76</tt>, then we round it up to the nearest multiple of <tt>32</tt>, i.e. <tt>96</tt> (in case of reads' length <tt>150</tt>, we round it up to <tt>160</tt>). Then divide by <tt>32</tt>, get <tt>M</tt> (<tt>3</tt> or <tt>5</tt>, respectively). So, each read in binary format will require <tt>16*M</tt> bytes. Each 32 bits correspond to to presence/absense of <tt>A</tt>, <tt>C</tt>, <tt>G</tt>, <tt>T</tt>. 
+
+
 
 <h2 id="link_alignReads">alignReads: simplistic alignment of paired-end reads</h2>
