@@ -3,6 +3,7 @@ Periodic lossless ternary seeds of maximum weight
 
 <nav>
   <ul>
+    <li><a href="#link_comp">Compilation</a></li>
     <li><a href="#link_intro">Introduction</a></li>
     <li><a href="#link_binaryLevel">periodicBinaryBlockLevel: binary blocks of less than maximum weight</a></li>
     <li><a href="#link_ternaryBlock">periodicTernaryBlocks: ternary blocks of maximum weight</a></li>	  
@@ -16,6 +17,16 @@ Periodic lossless ternary seeds of maximum weight
     <li><a href="#link_fna2acgt">alignReads: simplistic alignment of paired-end reads</a></li>
   </ul>
   </nav>
+
+<h2 id="link_comp">Compilation</h2>
+
+It is possible to download Intel C compiler (can be obtained from <a href="https://software.intel.com/content/www/us/en/develop/tools/oneapi/all-toolkits.html">oneAPI</a>) and use the following string for compilation
+
+<tt>icpc codeName.cpp -mssse3 -std=c++17 -qopenmp -o codeName.exe</tt>
+
+In some (serial application) <tt>-qopenmp</tt> option can be omitted. For Windows, it is possible to install <a = href="https://visualstudio.microsoft.com/vs/">Visual Studio</a> (before installation of the oneAPI toolkits). Some libraries are slightly different for Windows and Linux, so for Windows uncomment
+
+<tt>#define WIN32 1</tt>
 
 <h2 id="link_intro">Introduction</h2>
 We consider sequences of symbols <tt>A</tt>, <tt>C</tt>, <tt>G</tt> and <tt>T</tt>. In practical applications, we have a long <i>reference</i> sequence (up to billions of symbols) and a short sequence (<i>read</i>, often 50-300 symbols) obtained experimentally. The read is a small chunk of an unknown sequence, similar to the reference sequence. Therefore, we expect these two long sequences to have similar subsequences. There will also be some deviations, like SNPs (single-nucleotide polymorphisms), when some symbols are replaced by other symbols or insertions/deletions when some symbols are added or removed. 
