@@ -1,15 +1,14 @@
 //E:\Temp2\perlotSeeds\binaryBlocksText E:\Temp2\perlotSeeds\binaryBlocks 4 24 0 2
 
 #include <fstream>
-
+#include <string.h>
 #include <chrono>
-
 #include <smmintrin.h>
 #include <emmintrin.h>
 
-#include <cstring>
-
 #include <omp.h>
+
+//#define WIN32 1
 
 const int nchunk = 1000000;
 
@@ -631,7 +630,6 @@ int main(int argc, char* argv[]) {
 	printf("4) Size of blocks: %i\n", nLen);
 	printf("5) Minimum level: %i\n", levelMin);
 	printf("6) Maximum level: %i\n\n", levelMax);
-	
 
 	auto start = std::chrono::steady_clock::now();
 
@@ -639,7 +637,11 @@ int main(int argc, char* argv[]) {
 
 	auto end = std::chrono::steady_clock::now();
 	auto elapsed = std::chrono::duration_cast<std::chrono::milliseconds>(end - start);
+#ifdef WIN32
 	printf("It took me %lld ms.\n\n", elapsed.count());
+#else
+	printf("It took me %ld ms.\n\n", elapsed.count());
+#endif
 
 	return ires;
 }

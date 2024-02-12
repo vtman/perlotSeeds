@@ -1,16 +1,17 @@
 //E:\Temp2\perlotSeeds\binaryBlocks E:\Temp2\perlotSeeds\ternaryBlocks 30 2 3 0
 
 #include <fstream>
+#include <string.h>
+#include <iostream>
 
 #include <chrono>
-#include <iostream>
 
 #include <smmintrin.h>
 #include <emmintrin.h>
 
-#include <string.h>
-
 #include <omp.h>
+
+//#define WIN32 1
 
 const int MAX_ELEMENTS = 1000000;
 
@@ -684,7 +685,12 @@ int main(int argc, char** argv) {
 
 	auto end = std::chrono::steady_clock::now();
 	auto elapsed = std::chrono::duration_cast<std::chrono::milliseconds>(end - start);
+
+#ifdef WIN32
 	printf("It took me %lld ms.\n\n", elapsed.count());
+#else
+	printf("It took me %ld ms.\n\n", elapsed.count());
+#endif
 
 	return ires;
 }

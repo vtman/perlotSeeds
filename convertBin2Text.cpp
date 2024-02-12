@@ -1,5 +1,7 @@
 #include <fstream>
 
+//#define WIN32 1
+
 const int MEM_BLOCK_SIZE = 10000000;
 
 int printInfoParameters() {
@@ -48,9 +50,15 @@ int main(int argc, char** argv) {
 		return -2;
 	}
 
+#ifdef WIN32
 	_fseeki64(fi, 0, SEEK_END);
 	fileSize = _ftelli64(fi);
 	_fseeki64(fi, 0, SEEK_SET);
+#else
+	fseeko64(fi, 0, SEEK_END);
+	fileSize = ftello64(fi);
+	fseeko64(fi, 0, SEEK_SET);
+#endif
 
 	numRows = fileSize / ((long long)nbr);
 	rowsPerBlock = MEM_BLOCK_SIZE / nbr;
