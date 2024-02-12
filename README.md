@@ -233,7 +233,7 @@ FQB files format: length of reads (32-bit integer), total number of reads (64-bi
 
 We load the reference library in memory. Then mutiple threads start to process chuncks of binary reads files (FQB files), the size of chunks is defined by <tt>MAX_READ_COUNT</tt> (set to <tt>10000</tt>). We read two sequences for each read, create their reversed counterparts and find <i>signatures</i> using the specified seeds. Then find the corresponding position in the reference sequence and merge them into four lists. Since we have paired-edn reads, we have to  check in the positions from the lists for two seqeucnes are within a specifeid range. For those successful pairs of positions we perform alignment and count the number of transitional and transersional mismataches. In the output folder we have files for each group of <tt>MAX_READ_COUNT</tt> reads with information related to the total number of signatures found in the merged lists and detailed information about sucessful alignments. There is also <tt>statInfo.txt</tt> where a shortened information is provided (number of candidate positions, numbe rof successful alignment and the best score).
 
-All parameters are in <tt>settings.txt</tt> file
+<h3>Parameters</h3>
 
 <ol>
   <li>Path to the first binary reads file (created by <b>fastq2bin</b>): <tt>D:\Genome\Data\ERR016118_1.fqb</tt></li>
@@ -241,9 +241,9 @@ All parameters are in <tt>settings.txt</tt> file
   <li>Path to the library (containing <tt>original</tt> and <tt>sorted</tt> folders): <tt>D:\Genome\DataB32</tt></li>
   <li>Reference ACGT file: <tt>D:\Genome\RefData\ref.acgt</tt></li>
   <li>Info reference file (IACGT): <tt>D:\Genome\RefData\ref.iacgt</tt></li>
-  <li>Output folder: <tt>D:\Genome\output\B32</tt></li>
+  <li>Output folder: <tt>D:\Genome\output\C32</tt></li>
   <li>Distance between start position of read's seqeunces, minimum: <tt>200</tt></li>
   <li>Distance, maximum: <tt>800</tt></li>
 </ol>
 
-<tt>alignReads.exe</tt>
+<tt>alignReads.exe ../reads/first.fqb ../reads/second.fqb ../data/library ../reference/ref.acgt ../reference/ref.iacgt ../output/C40 200 800</tt>
