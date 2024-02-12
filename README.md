@@ -247,3 +247,5 @@ We load the reference library in memory. Then mutiple threads start to process c
 </ol>
 
 <tt>alignReads.exe ../reads/first.fqb ../reads/second.fqb ../data/library ../reference/ref.acgt ../reference/ref.iacgt ../output/C40 200 800</tt>
+
+Examples of out files can be found in <a href="https://zenodo.org/records/10645042">https://zenodo.org/records/10645042</a>.
